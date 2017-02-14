@@ -1,24 +1,24 @@
-Консольная утилита для скачивания файлов по HTTP протоколу.
+Console downloader via http.
 
-Входные параметры:
+supported options:
 
-    -n количество одновременно качающих потоков (1,2,3,4....)
-	-l общее ограничение на скорость скачивания, для всех потоков, размерность - байт/секунда, можно использовать суффиксы k,m (k=1024, m=1024*1024)
-	-f путь к файлу со списком ссылок
-	-o имя папки, куда складывать скачанные файлы
+    -n number of downloading threads
+	-l rate limit in bytes/sec with suffixes k, m (k=1024, m=1024*1024)
+	-f input file with links
+	-o output folder
 
-Формат файла со ссылками:
+input file format:
 
-	<HTTP ссылка><пробел><имя файла, под которым его надо сохранить>
+	<http-link><space><filename>
 
-пример:
+example:
 
 	http://example.com/archive.zip my_archive.zip
 	http://example.com/image.jpg picture.jpg
 	......
 
-Пример вызова:
+running example:
 
 	java -jar utility.jar -n 5 -l 2000k -o output_folder -f links.txt
 
-Описание взято отсюда: [Ecwid](https://github.com/Ecwid/new-job/blob/master/Console-downloader.md)
+Readme file source: [Ecwid](https://github.com/Ecwid/new-job/blob/master/Console-downloader.md)
